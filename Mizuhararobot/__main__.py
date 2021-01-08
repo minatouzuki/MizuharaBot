@@ -18,7 +18,7 @@ from Mizuhararobot import (
     SUPPORT_CHAT,
     dispatcher,
     StartTime,
-    telethn,
+    telethon,
     updater,
 )
 
