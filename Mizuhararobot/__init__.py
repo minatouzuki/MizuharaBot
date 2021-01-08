@@ -2,10 +2,11 @@ import logging
 import os
 import sys
 import time
+
 import spamwatch
 from redis import StrictRedis
 import telegram.ext as tg
-
+from pyrogram import Client
 from telethon import TelegramClient
 
 StartTime = time.time()
@@ -17,12 +18,19 @@ logging.basicConfig(
     level=logging.INFO,
 )
 
+# To avoid pyrogram.syncer flood every 20s
 LOGGER = logging.getLogger(__name__)
 
-# if version < 3.6, stop bot.
-if sys.version_info[0] < 3 or sys.version_info[1] < 6:
+logging.getLogger("pyrogram.syncer").setLevel(logging.WARNING)
+
+LOGGER = logging.getLogger(__name__)
+
+LOGGER.info("Starting Mizuhara...")
+
+# if version < 3.8, stop bot.
+if sys.version_info[0] < 3 or sys.version_info[1] < 8:
     LOGGER.error(
-        "You MUST have a python version of at least 3.6! Multiple features depend on this. Bot quitting."
+        "You MUST have a python version of at least 3.8! Multiple features depend on this. Bot quitting."
     )
     quit(1)
 
@@ -181,8 +189,13 @@ updater = tg.Updater(
     # base_url='https://bot.mannu.me/bot',
     use_context=True
 )
-telethn = TelegramClient("saitama", API_ID, API_HASH)
-dispatcher = updater.dispatcher
+
+tbot = TelegramClient("mizuhara", API_ID, API_HASH)
+
+pbot = Client("MizuharaPyro", api_id=API_ID,
+              api_hash=API_HASH,
+              bot_token=TOKEN)
+
 
 DRAGONS = list(DRAGONS) + list(DEV_USERS)
 DEV_USERS = list(DEV_USERS)
