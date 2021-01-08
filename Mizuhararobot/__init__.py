@@ -6,7 +6,7 @@ import spamwatch
 from pyrogram import Client
 
 import telegram.ext as tg
-from telethon import TelegramClient
+from telethn import TelegramClient
 
 StartTime = time.time()
 
