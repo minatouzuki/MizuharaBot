@@ -11,7 +11,6 @@ from urllib.parse import quote as urlencode
 
 import aiohttp
 from Mizuhararobot import pbot
-from Mizuhararobot.modules.tr_engine.strings import tld
 from pyrogram import Client, filters
 from pyrogram.types import Message
 
