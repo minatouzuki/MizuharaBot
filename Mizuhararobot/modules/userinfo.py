@@ -33,7 +33,7 @@ from Mizuhararobot.modules.sql.afk_sql import is_afk, check_afk_status
 from Mizuhararobot.modules.sql.users_sql import get_user_num_chats
 from Mizuhararobot.modules.helper_funcs.chat_status import sudo_plus
 from Mizuhararobot.modules.helper_funcs.extraction import extract_user
-from Mizuhararobot import telethn as SaitamaTelethonClient, TIGERS, DRAGONS, DEMONS
+from Mizuhararobot import telethon as SaitamaTelethonClient, TIGERS, DRAGONS, DEMONS
 
 
 def no_by_per(totalhp, percentage):
