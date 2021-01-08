@@ -431,8 +431,8 @@ async def site_search(client: Client, m: Message, site: str):
             result,
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(buttons),
-            disable_web_page_preview=True,
-     else:
+            disable_web_page_preview=True)
+    else:
         await m.reply_text(
             result, parse_mode=ParseMode.HTML, disable_web_page_preview=True
  
