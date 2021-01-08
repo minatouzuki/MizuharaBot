@@ -47,7 +47,7 @@ from telegram.utils.helpers import escape_markdown
 
 from Mizuhararobot import (dispatcher, updater, TOKEN, OWNER_ID, WEBHOOK,SUPPORT_CHAT,
                            CERT_PATH, PORT, URL, LOGGER, BLACKLIST_CHATS, WHITELIST_CHATS,
-                           pbot,client )
+                           pbot,tbot )
 
 
 def get_readable_time(seconds: int) -> str:
