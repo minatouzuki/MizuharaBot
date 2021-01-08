@@ -6,7 +6,7 @@ from telegram.error import BadRequest
 from telegram.ext import Filters, MessageHandler, CommandHandler, run_async
 from telegram.utils.helpers import mention_html
 
-from Mizuhararobot import dispatcher, REDIS, TIGERS, WOLVES
+from Mizuhararobot import dispatcher, TIGERS, WOLVES
 from Mizuhararobot.modules.helper_funcs.chat_status import is_user_admin, user_admin
 from Mizuhararobot.modules.helper_funcs.string_handling import extract_time
 from Mizuhararobot.modules.log_channel import loggable
@@ -25,13 +25,6 @@ def check_flood(update, context) -> str:
     user = update.effective_user  # type: Optional[User]
     chat = update.effective_chat  # type: Optional[Chat]
     msg = update.effective_message  # type: Optional[Message]
-    
-    chat_id = str(chat.id)[1:] 
-    approve_list = list(REDIS.sunion(f'approve_list_{chat_id}'))
-    target_user = mention_html(user.id, user.first_name)
-    if target_user in approve_list:
-        return
-
     if not user:  # ignore channels
         return ""
 
