@@ -2,11 +2,11 @@ import logging
 import os
 import sys
 import time
-
 import spamwatch
-import telegram.ext as tg
 from redis import StrictRedis
 from pyrogram import Client
+
+import telegram.ext as tg
 from telethon import TelegramClient
 
 StartTime = time.time()
