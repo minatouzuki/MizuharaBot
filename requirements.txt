@@ -27,7 +27,6 @@ jikanpy>=4.2.2
 speedtest-cli
 coffeehouse
 regex
-bleach
 git+https://github.com/starry69/python-markdown2.git
 wikipedia
 spamwatch>=0.3.0
