@@ -14,13 +14,13 @@ from telegram.ext import CallbackQueryHandler, Filters, MessageHandler
 from telegram.ext.dispatcher import (Dispatcher, DispatcherHandlerStop,
                                      run_async)
 
-from hitsuki import LOGGER, TOKEN, dispatcher, pbot, tbot, updater
+from Mizuhararobot import LOGGER, TOKEN, dispatcher, pbot, tbot, updater
 # Needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
-from hitsuki.modules import ALL_MODULES
-from hitsuki.modules.disable import DisableAbleCommandHandler
-from hitsuki.modules.helper_funcs.misc import paginate_modules
-from hitsuki.modules.tr_engine.strings import tld
+from Mizuhararobot.modules import ALL_MODULES
+from Mizuhararobot.modules.disable import DisableAbleCommandHandler
+from Mizuhararobot.modules.helper_funcs.misc import paginate_modules
+from Mizuhararobot.modules.tr_engine.strings import tld
 
 IMPORTED = {}
 MIGRATEABLE = []
