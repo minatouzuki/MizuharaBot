@@ -7,6 +7,7 @@ pyrogram>=1.0.7
 TgCrypto>=1.2.2
 telegraph>=1.4.1
 telethon>=1.17.5
+python-telegram-bot==12.8
 psycopg2-binary
 feedparser
 pynewtonmath
