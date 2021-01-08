@@ -15,7 +15,7 @@ from telegram.ext import CallbackQueryHandler, Filters, MessageHandler
 from telegram.ext.dispatcher import (Dispatcher, DispatcherHandlerStop,
                                      run_async)
 
-from Mizuhararobot import LOGGER, TOKEN, dispatcher, pbot, tbot, updater
+from Mizuhararobot import TOKEN, dispatcher, pbot, tbot, updater
 # Needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
 from Mizuhararobot.modules import ALL_MODULES
