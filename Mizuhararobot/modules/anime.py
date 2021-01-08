@@ -442,6 +442,7 @@ async def kaizoku(c: Client, update: Update):
     await site_search(c, update, "kaizoku")
 
 
+#
 @pbot.on_message(filters.command('kayo'))
 async def kayo(c: Client, update: Update):
     await site_search(c, update, "kayo")
