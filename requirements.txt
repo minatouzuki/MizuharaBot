@@ -1,5 +1,4 @@
 #library 
-redis
 lxml
 requests
 sqlalchemy>=1.3.20
