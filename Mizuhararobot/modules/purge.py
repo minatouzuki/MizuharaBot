@@ -1,4 +1,4 @@
-from Mizuhararobot.modules.helper_funcs.telethn.chatstatus import (
+from Mizuhararobot.modules.helper_funcs.telethon.chatstatus import (
     can_delete_messages,
     user_is_admin,
 )
@@ -7,7 +7,7 @@ import time
 from telethon import events
 
 
-@telethn.on(events.NewMessage(pattern="^[!/]purge$"))
+@telethon.on(events.NewMessage(pattern="^[!/]purge$"))
 async def purge_messages(event):
     start = time.perf_counter()
     if event.from_id is None:
@@ -44,7 +44,7 @@ async def purge_messages(event):
     await event.respond(text, parse_mode="markdown")
 
 
-@telethn.on(events.NewMessage(pattern="^[!/]del$"))
+@telethon.on(events.NewMessage(pattern="^[!/]del$"))
 async def delete_messages(event):
     if event.from_id is None:
         return
