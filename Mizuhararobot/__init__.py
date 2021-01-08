@@ -3,7 +3,6 @@ import os
 import sys
 import time
 import spamwatch
-from redis import StrictRedis
 from pyrogram import Client
 
 import telegram.ext as tg
@@ -88,7 +87,6 @@ if ENV:
     CASH_API_KEY = os.environ.get("CASH_API_KEY", None)
     TIME_API_KEY = os.environ.get("TIME_API_KEY", None)
     AI_API_KEY = os.environ.get("AI_API_KEY", None)
-    REDIS_URL = os.environ.get('REDIS_URL', None)
     WALL_API = os.environ.get("WALL_API", None)
     SUPPORT_CHAT = os.environ.get("SUPPORT_CHAT", None)
     SPAMWATCH_SUPPORT_CHAT = os.environ.get("SPAMWATCH_SUPPORT_CHAT", None)
@@ -141,7 +139,6 @@ else:
     API_ID = Config.API_ID
     API_HASH = Config.API_HASH
 
-    REDIS_URL = Config.REDIS_URL
     DB_URI = Config.SQLALCHEMY_DATABASE_URI
     DONATION_LINK = Config.DONATION_LINK
     LOAD = Config.LOAD
@@ -173,14 +170,6 @@ if not SPAMWATCH_API:
     LOGGER.warning("SpamWatch API key missing! recheck your config.")
 else:
     sw = spamwatch.Client(SPAMWATCH_API)
-
-
-REDIS = StrictRedis.from_url(REDIS_URL,decode_responses=True)
-try:
-    REDIS.ping()
-    LOGGER.info("Your redis server is now alive!")
-except BaseException:
-    raise Exception("Your redis server is not alive, please check again.")
 
 
 updater = tg.Updater(
